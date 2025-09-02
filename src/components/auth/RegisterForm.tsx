@@ -147,7 +147,7 @@ const RegisterForm = () => {
                 </form>
                 <p className="text-center">
                     Already have an account?{" "}
-                    <Link href="/register">
+                    <Link href="/login">
                         <span>Login here</span>
                     </Link>
                 </p>
