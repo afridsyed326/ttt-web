@@ -7,6 +7,7 @@ import { useAuthActions } from "@/store/auth/authActions";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addToast } from "@heroui/toast";
+import { Link } from "@heroui/link";
 
 const LoginForm = () => {
     const { login } = useAuthActions();
@@ -14,8 +15,8 @@ const LoginForm = () => {
     const navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
-            username: "afridsyed326",
-            password: "Abcd123!",
+            username: "",
+            password: "",
         },
         validationSchema: Yup.object({
             username: Yup.string().required("Username is required"),
@@ -90,6 +91,12 @@ const LoginForm = () => {
                         Login
                     </Button>
                 </form>
+                <p className="text-center">
+                    Dont have an account?{" "}
+                    <Link href="/register">
+                        <span>Register here</span>
+                    </Link>
+                </p>
             </Card>
         </div>
     );
